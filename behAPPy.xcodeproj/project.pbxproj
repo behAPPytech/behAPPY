@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354C701D1C8797630077BFCE /* brainFood.html in Resources */ = {isa = PBXBuildFile; fileRef = 354C701B1C8797630077BFCE /* brainFood.html */; };
+		354C701E1C8797630077BFCE /* takeABreak.html in Resources */ = {isa = PBXBuildFile; fileRef = 354C701C1C8797630077BFCE /* takeABreak.html */; };
+		354C70211C8797700077BFCE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 354C701F1C8797700077BFCE /* style.css */; };
+		354C70221C8797700077BFCE /* style2.css in Resources */ = {isa = PBXBuildFile; fileRef = 354C70201C8797700077BFCE /* style2.css */; };
 		C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2D81C8634F80059C29B /* AppDelegate.swift */; };
 		C1B0F2DB1C8634F80059C29B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2DA1C8634F80059C29B /* ViewController.swift */; };
 		C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2DC1C8634F80059C29B /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		354C701B1C8797630077BFCE /* brainFood.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = brainFood.html; path = ../../../brainFood.html; sourceTree = "<group>"; };
+		354C701C1C8797630077BFCE /* takeABreak.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = takeABreak.html; path = ../../../takeABreak.html; sourceTree = "<group>"; };
+		354C701F1C8797700077BFCE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style.css; path = ../../../style.css; sourceTree = "<group>"; };
+		354C70201C8797700077BFCE /* style2.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style2.css; path = ../../../style2.css; sourceTree = "<group>"; };
 		C1B0F2D51C8634F80059C29B /* behAPPy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = behAPPy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0F2D81C8634F80059C29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B0F2DA1C8634F80059C29B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +108,10 @@
 				C1B0F2D81C8634F80059C29B /* AppDelegate.swift */,
 				C1B0F2DA1C8634F80059C29B /* ViewController.swift */,
 				C1B0F2DC1C8634F80059C29B /* Main.storyboard */,
+				354C701F1C8797700077BFCE /* style.css */,
+				354C70201C8797700077BFCE /* style2.css */,
+				354C701B1C8797630077BFCE /* brainFood.html */,
+				354C701C1C8797630077BFCE /* takeABreak.html */,
 				C1B0F2DF1C8634F80059C29B /* Assets.xcassets */,
 				C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */,
 				C1B0F2E41C8634F80059C29B /* Info.plist */,
@@ -233,8 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B0F2E31C8634F80059C29B /* LaunchScreen.storyboard in Resources */,
+				354C70221C8797700077BFCE /* style2.css in Resources */,
+				354C70211C8797700077BFCE /* style.css in Resources */,
+				354C701D1C8797630077BFCE /* brainFood.html in Resources */,
 				C1B0F2E01C8634F80059C29B /* Assets.xcassets in Resources */,
 				C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */,
+				354C701E1C8797630077BFCE /* takeABreak.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +503,7 @@
 				C1B0F2FF1C8634F80059C29B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C1B0F3001C8634F80059C29B /* Build configuration list for PBXNativeTarget "behAPPyTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +512,7 @@
 				C1B0F3021C8634F80059C29B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C1B0F3031C8634F80059C29B /* Build configuration list for PBXNativeTarget "behAPPyUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +521,7 @@
 				C1B0F3051C8634F80059C29B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
