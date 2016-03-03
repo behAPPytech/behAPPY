@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354C70A41C87C4C20077BFCE /* brainFood.html in Resources */ = {isa = PBXBuildFile; fileRef = 354C70A01C87C4C20077BFCE /* brainFood.html */; };
-		354C70A51C87C4C20077BFCE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 354C70A11C87C4C20077BFCE /* style.css */; };
-		354C70A61C87C4C20077BFCE /* style2.css in Resources */ = {isa = PBXBuildFile; fileRef = 354C70A21C87C4C20077BFCE /* style2.css */; };
-		354C70A71C87C4C20077BFCE /* takeABreak.html in Resources */ = {isa = PBXBuildFile; fileRef = 354C70A31C87C4C20077BFCE /* takeABreak.html */; };
+		354C70AC1C87C5FD0077BFCE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 354C70A81C87C5FD0077BFCE /* style.css */; };
+		354C70AD1C87C5FD0077BFCE /* style2.css in Resources */ = {isa = PBXBuildFile; fileRef = 354C70A91C87C5FD0077BFCE /* style2.css */; };
+		354C70AE1C87C5FD0077BFCE /* brainFood.html in Resources */ = {isa = PBXBuildFile; fileRef = 354C70AA1C87C5FD0077BFCE /* brainFood.html */; };
+		354C70AF1C87C5FD0077BFCE /* takeABreak.html in Resources */ = {isa = PBXBuildFile; fileRef = 354C70AB1C87C5FD0077BFCE /* takeABreak.html */; };
 		C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2D81C8634F80059C29B /* AppDelegate.swift */; };
 		C1B0F2DB1C8634F80059C29B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2DA1C8634F80059C29B /* ViewController.swift */; };
 		C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2DC1C8634F80059C29B /* Main.storyboard */; };
@@ -38,10 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		354C70A01C87C4C20077BFCE /* brainFood.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = brainFood.html; path = ../../html/brainFood.html; sourceTree = "<group>"; };
-		354C70A11C87C4C20077BFCE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style.css; path = ../../html/style.css; sourceTree = "<group>"; };
-		354C70A21C87C4C20077BFCE /* style2.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style2.css; path = ../../html/style2.css; sourceTree = "<group>"; };
-		354C70A31C87C4C20077BFCE /* takeABreak.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = takeABreak.html; path = ../../html/takeABreak.html; sourceTree = "<group>"; };
+		354C70A81C87C5FD0077BFCE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style.css; path = behAPPyhtml/style.css; sourceTree = "<group>"; };
+		354C70A91C87C5FD0077BFCE /* style2.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style2.css; path = behAPPyhtml/style2.css; sourceTree = "<group>"; };
+		354C70AA1C87C5FD0077BFCE /* brainFood.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = brainFood.html; path = behAPPyhtml/brainFood.html; sourceTree = "<group>"; };
+		354C70AB1C87C5FD0077BFCE /* takeABreak.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = takeABreak.html; path = behAPPyhtml/takeABreak.html; sourceTree = "<group>"; };
 		C1B0F2D51C8634F80059C29B /* behAPPy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = behAPPy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0F2D81C8634F80059C29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B0F2DA1C8634F80059C29B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,13 +82,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		354C702B1C8798710077BFCE /* behAPPyhtml */ = {
+		354C70B01C87C6180077BFCE /* behAPPyhtml */ = {
 			isa = PBXGroup;
 			children = (
-				354C70A01C87C4C20077BFCE /* brainFood.html */,
-				354C70A11C87C4C20077BFCE /* style.css */,
-				354C70A21C87C4C20077BFCE /* style2.css */,
-				354C70A31C87C4C20077BFCE /* takeABreak.html */,
+				354C70A81C87C5FD0077BFCE /* style.css */,
+				354C70A91C87C5FD0077BFCE /* style2.css */,
+				354C70AA1C87C5FD0077BFCE /* brainFood.html */,
+				354C70AB1C87C5FD0077BFCE /* takeABreak.html */,
 			);
 			name = behAPPyhtml;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 		C1B0F2CC1C8634F80059C29B = {
 			isa = PBXGroup;
 			children = (
-				354C702B1C8798710077BFCE /* behAPPyhtml */,
+				354C70B01C87C6180077BFCE /* behAPPyhtml */,
 				C1B0F2D71C8634F80059C29B /* behAPPy */,
 				C1B0F2EC1C8634F80059C29B /* behAPPyTests */,
 				C1B0F2F71C8634F80059C29B /* behAPPyUITests */,
@@ -253,12 +253,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B0F2E31C8634F80059C29B /* LaunchScreen.storyboard in Resources */,
-				354C70A41C87C4C20077BFCE /* brainFood.html in Resources */,
-				354C70A61C87C4C20077BFCE /* style2.css in Resources */,
-				354C70A51C87C4C20077BFCE /* style.css in Resources */,
+				354C70AE1C87C5FD0077BFCE /* brainFood.html in Resources */,
+				354C70AC1C87C5FD0077BFCE /* style.css in Resources */,
 				C1B0F2E01C8634F80059C29B /* Assets.xcassets in Resources */,
+				354C70AD1C87C5FD0077BFCE /* style2.css in Resources */,
 				C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */,
-				354C70A71C87C4C20077BFCE /* takeABreak.html in Resources */,
+				354C70AF1C87C5FD0077BFCE /* takeABreak.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
