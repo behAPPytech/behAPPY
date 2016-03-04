@@ -20,6 +20,7 @@
 		C1B0F2E31C8634F80059C29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */; };
 		C1B0F2EE1C8634F80059C29B /* behAPPyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2ED1C8634F80059C29B /* behAPPyTests.swift */; };
 		C1B0F2F91C8634F80059C29B /* behAPPyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2F81C8634F80059C29B /* behAPPyUITests.swift */; };
+		C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCDF331C8A033D009212BC /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C1B0F2F41C8634F80059C29B /* behAPPyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = behAPPyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0F2F81C8634F80059C29B /* behAPPyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = behAPPyUITests.swift; sourceTree = "<group>"; };
 		C1B0F2FA1C8634F80059C29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FCDF331C8A033D009212BC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				C1B0F2DA1C8634F80059C29B /* ViewController.swift */,
 				C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */,
 				C12CCF611C88C012003477E9 /* PushButtonView.swift */,
+				C1FCDF331C8A033D009212BC /* GraphView.swift */,
 				C1B0F2DC1C8634F80059C29B /* Main.storyboard */,
 				C1B0F2DF1C8634F80059C29B /* Assets.xcassets */,
 				C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */,
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */,
 				C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */,
 				C1B0F2DB1C8634F80059C29B /* ViewController.swift in Sources */,
 				C12CCF621C88C012003477E9 /* PushButtonView.swift in Sources */,
