@@ -33,9 +33,14 @@ class SleepViewController: UIViewController {
         if button.isAddButton {
             counter = counter + 1
         } else {
-            counter = counter - 1
+            if counter == 0 {
+                counter = 0
+            } else if counter > 0 {
+                counter = counter - 1
+            }
         }
         CounterLabel.text = String(counter)
+        setupGraphDisplay()
     }
     
     

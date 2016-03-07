@@ -13,7 +13,7 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
     @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
-    var graphPoints:[Int] = [4, 2, 5, 6, 2, 1, 3]
+    var graphPoints:[Int] = [8, 8, 8, 8, 8, 8, 8]
 
     override func drawRect(rect: CGRect) {
         
