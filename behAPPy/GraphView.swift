@@ -5,18 +5,23 @@
 //  Created by block7 on 3/4/16.
 //  Copyright © 2016 block7. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 @IBDesignable class GraphView: UIView {
-
+    
+    let points:[Int] = [0,0,0,0,0,0,0]
+    
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
     @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
-    var graphPoints:[Int] = [8, 8, 8, 8, 8, 8, 8]
+    var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
 
     override func drawRect(rect: CGRect) {
+        NSUserDefaults.standardUserDefaults().setObject(points, forKey: "graphPoints")
+        print("graph points: \(graphPoints)")
         
+
         let width = rect.width
         let height = rect.height
         
@@ -111,9 +116,6 @@ import UIKit
     }
 
 }
-
-
-
 
 
 

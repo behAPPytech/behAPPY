@@ -42,7 +42,8 @@ class SleepViewController: UIViewController {
         CounterLabel.text = String(counter)
         setupGraphDisplay()
     }
-    
+    let average = 0
+    let averageWater = NSUserDefaults.standardUserDefaults().integerForKey(average) as! int
     
     func setupGraphDisplay() {
         let noOfDays:Int = 7
@@ -50,6 +51,7 @@ class SleepViewController: UIViewController {
         graphView.setNeedsDisplay()
         maxLabel.text = "\(graphView.graphPoints.maxElement()!)"
         let average = graphView.graphPoints.reduce(0, combine: +) / graphView.graphPoints.count
+        NSUserDefaults.standardUserDefaults().setInteger(average, forKey: "averageWater")
         averageSleep.text = "Average: \(average)"
         
         let dateFormatter = NSDateFormatter()
@@ -74,3 +76,6 @@ class SleepViewController: UIViewController {
     }
 
 }
+
+
+
