@@ -1,4 +1,4 @@
-//
+
 //  GraphView.swift
 //  behAPPy
 //
@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 @IBDesignable class GraphView: UIView {
-    
-    let points:[Int] = [0,0,0,0,0,0,0]
-    
+    var graphPoints:[Int] = [0,0,0,0,0,0,0]
+    var points:[Int] = [0,0,0,0,0,0,0]
+
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
     @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
-    var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
-
+    
     override func drawRect(rect: CGRect) {
-        NSUserDefaults.standardUserDefaults().setObject(points, forKey: "graphPoints")
-        print("graph points: \(graphPoints)")
+//        var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
+//        NSUserDefaults.standardUserDefaults().setObject(points, forKey: "graphPoints")
+//        print("graph points: \(graphPoints)")
         
 
         let width = rect.width

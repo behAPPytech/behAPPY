@@ -43,7 +43,7 @@ class SleepViewController: UIViewController {
         setupGraphDisplay()
     }
     let average = 0
-    let averageWater = NSUserDefaults.standardUserDefaults().integerForKey(average) as! int
+//    let averageWater = NSUserDefaults.standardUserDefaults().integerForKey(average) as! int
     
     func setupGraphDisplay() {
         let noOfDays:Int = 7
