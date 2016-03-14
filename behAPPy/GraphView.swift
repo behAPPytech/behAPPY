@@ -15,12 +15,63 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
     @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
+    var label1:UILabel = UILabel()
+    var label2:UILabel = UILabel()
+    var label3:UILabel = UILabel()
+    var label4:UILabel = UILabel()
+    var label5:UILabel = UILabel()
+    var label6:UILabel = UILabel()
+    var label7:UILabel = UILabel()
+
+    func createLabels() {
+        label1.frame = CGRectMake(14, 352, 16, 21)
+        label2.frame = CGRectMake(100, 352, 16, 21)
+        label3.frame = CGRectMake(186, 352, 16, 21)
+        label4.frame = CGRectMake(272, 352, 16, 21)
+        label5.frame = CGRectMake(358, 352, 16, 21)
+        label6.frame = CGRectMake(444, 352, 16, 21)
+        label7.frame = CGRectMake(530, 352, 16, 21)
+        
+        label1.textColor = UIColor.blackColor()
+        label2.textColor = UIColor.blackColor()
+        label3.textColor = UIColor.blackColor()
+        label4.textColor = UIColor.blackColor()
+        label5.textColor = UIColor.blackColor()
+        label6.textColor = UIColor.blackColor()
+        label7.textColor = UIColor.blackColor()
+
+        label1.text = "M"
+        label2.text = "M"
+        label3.text = "M"
+        label4.text = "M"
+        label5.text = "M"
+        label6.text = "M"
+        label7.text = "M"
+        
+        label1.tag = 1
+        label2.tag = 2
+        label3.tag = 3
+        label4.tag = 4
+        label5.tag = 5
+        label6.tag = 6
+        label7.tag = 7
+        
+        self.addSubview(label1)
+        self.addSubview(label2)
+        self.addSubview(label3)
+        self.addSubview(label4)
+        self.addSubview(label5)
+        self.addSubview(label6)
+        self.addSubview(label7)
+        
+    }
+    
     
     override func drawRect(rect: CGRect) {
 //        var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
 //        NSUserDefaults.standardUserDefaults().setObject(points, forKey: "graphPoints")
 //        print("graph points: \(graphPoints)")
-        
+        createLabels()
 
         let width = rect.width
         let height = rect.height
