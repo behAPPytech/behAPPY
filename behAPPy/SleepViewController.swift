@@ -17,11 +17,15 @@ class SleepViewController: UIViewController {
     @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var averageSleep: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
+
+    var width = graphView.widthAnchor
+    let height = graphView.heightAnchor
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CounterLabel.text = String(counter)
         setupGraphDisplay()
+        
     }
     
     override func didReceiveMemoryWarning() {

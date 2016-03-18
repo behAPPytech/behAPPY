@@ -12,121 +12,90 @@ import UIKit
     var graphPoints:[Int] = [0,0,0,0,0,0,0]
     var points:[Int] = [0,0,0,0,0,0,0]
     
-    let daysLayer:CATextLayer!
-    let daysLayer1:CATextLayer!
-    let daysLayer2:CATextLayer!
-    let daysLayer3:CATextLayer!
-    let daysLayer4:CATextLayer!
-    let daysLayer5:CATextLayer!
-    let daysLayer6:CATextLayer!
+
 
 
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
     @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
-    var label1:UILabel = UILabel()
-    var label2:UILabel = UILabel()
-    var label3:UILabel = UILabel()
-    var label4:UILabel = UILabel()
-    var label5:UILabel = UILabel()
-    var label6:UILabel = UILabel()
-    var label7:UILabel = UILabel()
-    
-    
+
+    var layerOne:CATextLayer!
+    var layerTwo:CATextLayer!
+    var layerThree:CATextLayer!
+    var layerFour:CATextLayer!
+    var layerFive:CATextLayer!
+    var layerSix:CATextLayer!
+    var layerSeven:CATextLayer!
 
     
-
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        layerOne = CATextLayer()
+        layerTwo = CATextLayer()
+        layerThree = CATextLayer()
+        layerFour = CATextLayer()
+        layerFive = CATextLayer()
+        layerSix = CATextLayer()
+        layerSeven = CATextLayer()
+        
+        
+        let frame1 = CGRect(x: 14, y:360, width: 15, height: 21)
+        let frame2 = CGRect(x: 100, y:360, width: 15, height: 21)
+        let frame3 = CGRect(x: 186, y:360, width: 15, height: 21)
+        let frame4 = CGRect(x: 272, y:360, width: 15, height: 21)
+        let frame5 = CGRect(x: 358, y:360, width: 15, height: 21)
+        let frame6 = CGRect(x: 444, y:360, width: 15, height: 21)
+        let frame7 = CGRect(x: 530, y:360, width: 15, height: 21)
 
-        let frame1 = CGRect(x: 14, y: 352, width: 16, height: 21)
-        let frame2 = CGRect(x: 100, y: 352, width: 16, height: 21)
-        let frame3 = CGRect(x: 186, y: 352, width: 16, height: 21)
-        let frame4 = CGRect(x: 272, y: 352, width: 16, height: 21)
-        let frame5 = CGRect(x: 358, y: 352, width: 16, height: 21)
-        let frame6 = CGRect(x: 444, y: 352, width: 16, height: 21)
-        let frame7 = CGRect(x: 530, y: 352, width: 16, height: 21)
-        
-        daysLayer.frame = frame1
-        daysLayer1.frame = frame2
-        daysLayer2.frame = frame3
-        daysLayer3.frame = frame4
-        daysLayer4.frame = frame5
-        daysLayer5.frame = frame6
-        daysLayer6.frame = frame7
-        
-        daysLayer.string = "M"
-        daysLayer1.string = "M"
-        daysLayer2.string = "M"
-        daysLayer3.string = "M"
-        daysLayer4.string = "M"
-        daysLayer5.string = "M"
-        daysLayer6.string = "M"
-        
-        createLabels()
+        layerOne.frame = frame1
+        layerTwo.frame = frame2
+        layerThree.frame = frame3
+        layerFour.frame = frame4
+        layerFive.frame = frame5
+        layerSix.frame = frame6
+        layerSeven.frame = frame7
+
+        layerOne.string = "M"
+        layerTwo.string = "M"
+        layerThree.string = "M"
+        layerFive.string = "M"
+        layerFour.string = "M"
+        layerSix.string = "M"
+        layerSeven.string = "M"
+
+        layerOne.fontSize = 17
+        layerTwo.fontSize = 17
+        layerThree.fontSize = 17
+        layerFour.fontSize = 17
+        layerFive.fontSize = 17
+        layerSix.fontSize = 17
+        layerSeven.fontSize = 17
+
+        layerOne.foregroundColor = UIColor.blackColor().CGColor
+        layerTwo.foregroundColor = UIColor.blackColor().CGColor
+        layerThree.foregroundColor = UIColor.blackColor().CGColor
+        layerFour.foregroundColor = UIColor.blackColor().CGColor
+        layerFive.foregroundColor = UIColor.blackColor().CGColor
+        layerSix.foregroundColor = UIColor.blackColor().CGColor
+        layerSeven.foregroundColor = UIColor.blackColor().CGColor
+
+        self.layer.addSublayer(layerOne)
+        self.layer.addSublayer(layerTwo)
+        self.layer.addSublayer(layerThree)
+        self.layer.addSublayer(layerFour)
+        self.layer.addSublayer(layerFive)
+        self.layer.addSublayer(layerSix)
+        self.layer.addSublayer(layerSeven)
         
         
 
-        
-    
-    }
-
-    func createLabels() {
-        
-//        let margin1:CGFloat = 20.0
-//        let columnXPoint1 = { (column:Int) -> CGFloat in
-//            let spacer = (width - margin1*2 - 4) / (CGFloat(self.graphPoints.count - 1))
-//            var x:CGFloat = CGFloat(column) * spacer
-//            x += margin + 2
-//            return x
-//        }
-        
-//        label1.frame = CGRectMake(14, 352, 16, 21)
-//        label2.frame = CGRectMake(100, 352, 16, 21)
-//        label3.frame = CGRectMake(186, 352, 16, 21)
-//        label4.frame = CGRectMake(272, 352, 16, 21)
-//        label5.frame = CGRectMake(358, 352, 16, 21)
-//        label6.frame = CGRectMake(444, 352, 16, 21)
-//        label7.frame = CGRectMake(530, 352, 16, 21)
-//        
-//        label1.textColor = UIColor.blackColor()
-//        label2.textColor = UIColor.blackColor()
-//        label3.textColor = UIColor.blackColor()
-//        label4.textColor = UIColor.blackColor()
-//        label5.textColor = UIColor.blackColor()
-//        label6.textColor = UIColor.blackColor()
-//        label7.textColor = UIColor.blackColor()
-//        
-//        label1.text = "M"
-//        label2.text = "M"
-//        label3.text = "M"
-//        label4.text = "M"
-//        label5.text = "M"
-//        label6.text = "M"
-//        label7.text = "M"
-//        
-//        label1.tag = 1
-//        label2.tag = 2
-//        label3.tag = 3
-//        label4.tag = 4
-//        label5.tag = 5
-//        label6.tag = 6
-//        label7.tag = 7
-//        
-//        
-        self.addSubview(label1)
-        self.addSubview(label2)
-        self.addSubview(label3)
-        self.addSubview(label4)
-        self.addSubview(label5)
-        self.addSubview(label6)
-        self.addSubview(label7)
-
-        
-       
         
     }
-    
     
     override func drawRect(rect: CGRect) {
         
@@ -134,11 +103,9 @@ import UIKit
         let height = rect.height
         
         
-        //        var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
+//        var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
 //        NSUserDefaults.standardUserDefaults().setObject(points, forKey: "graphPoints")
 //        print("graph points: \(graphPoints)")
-        createLabels()
-        
 
         
         var path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
