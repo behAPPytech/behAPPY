@@ -63,7 +63,7 @@ import UIKit
         daysLayer5.string = "M"
         daysLayer6.string = "M"
         
-        
+        createLabels()
         
         
 
@@ -114,13 +114,13 @@ import UIKit
 //        label7.tag = 7
 //        
 //        
-//        self.addSubview(label1)
-//        self.addSubview(label2)
-//        self.addSubview(label3)
-//        self.addSubview(label4)
-//        self.addSubview(label5)
-//        self.addSubview(label6)
-//        self.addSubview(label7)
+        self.addSubview(label1)
+        self.addSubview(label2)
+        self.addSubview(label3)
+        self.addSubview(label4)
+        self.addSubview(label5)
+        self.addSubview(label6)
+        self.addSubview(label7)
 
         
        
