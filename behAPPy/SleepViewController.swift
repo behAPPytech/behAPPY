@@ -17,15 +17,13 @@ class SleepViewController: UIViewController {
     @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var averageSleep: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
-
-    var width = graphView.widthAnchor
-    let height = graphView.heightAnchor
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CounterLabel.text = String(counter)
         setupGraphDisplay()
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,12 +48,13 @@ class SleepViewController: UIViewController {
 //    let averageWater = NSUserDefaults.standardUserDefaults().integerForKey(average) as! int
     
     func setupGraphDisplay() {
+
         let noOfDays:Int = 7
         graphView.graphPoints[graphView.graphPoints.count-1] = counter
         graphView.setNeedsDisplay()
         maxLabel.text = "\(graphView.graphPoints.maxElement()!)"
         let average = graphView.graphPoints.reduce(0, combine: +) / graphView.graphPoints.count
-        NSUserDefaults.standardUserDefaults().setInteger(average, forKey: "averageWater")
+        NSUserDefaults.standardUserDefaults().setInteger(average, forKey: "averageSleep")
         averageSleep.text = "Average: \(average)"
         
         let dateFormatter = NSDateFormatter()
@@ -78,6 +77,8 @@ class SleepViewController: UIViewController {
         }
         
     }
+    
+    
 
 }
 
