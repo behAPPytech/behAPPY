@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class Assignments {
+class Assignment {
     
-    let title: String
+    var title: String
     
     
     init(title: String) {

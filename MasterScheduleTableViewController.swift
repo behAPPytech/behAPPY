@@ -9,15 +9,25 @@
 import UIKit
 
 protocol AssignmentSelectDelegate: class {
-    func assignmentSelected(
+    func assignmentSelected(newAssignment: Assignment)
 }
 
 class MasterScheduleTableViewController: UITableViewController {
     
-    var assignments = [Assignments]()
+    var assignments = [Assignment]()
+    weak var delegate: AssignmentSelectDelegate?
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.assignments.append(Assignment(title: "hello"))
+        self.assignments.append(Assignment(title: "cat"))
+        self.assignments.append(Assignment(title: "hi"))
+        self.assignments.append(Assignment(title: "steve"))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

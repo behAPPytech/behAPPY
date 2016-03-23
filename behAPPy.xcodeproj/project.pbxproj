@@ -11,7 +11,7 @@
 		C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */; };
 		C12CCF621C88C012003477E9 /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12CCF611C88C012003477E9 /* PushButtonView.swift */; };
 		C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2D81C8634F80059C29B /* AppDelegate.swift */; };
-		C1B0F2DB1C8634F80059C29B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2DA1C8634F80059C29B /* ViewController.swift */; };
+		C1B0F2DB1C8634F80059C29B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2DA1C8634F80059C29B /* MainViewController.swift */; };
 		C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2DC1C8634F80059C29B /* Main.storyboard */; };
 		C1B0F2E01C8634F80059C29B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2DF1C8634F80059C29B /* Assets.xcassets */; };
 		C1B0F2E31C8634F80059C29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		C1B0F2F91C8634F80059C29B /* behAPPyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2F81C8634F80059C29B /* behAPPyUITests.swift */; };
 		C1C364371CA1DE500006211A /* MasterScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C364361CA1DE500006211A /* MasterScheduleTableViewController.swift */; };
 		C1C364391CA1DE730006211A /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C364381CA1DE730006211A /* ScheduleDetailViewController.swift */; };
-		C1C3643B1CA1DFB60006211A /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3643A1CA1DFB60006211A /* Assignments.swift */; };
+		C1C3643B1CA1DFB60006211A /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3643A1CA1DFB60006211A /* Assignment.swift */; };
 		C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCDF331C8A033D009212BC /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		C12CCF611C88C012003477E9 /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
 		C1B0F2D51C8634F80059C29B /* behAPPy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = behAPPy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0F2D81C8634F80059C29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1B0F2DA1C8634F80059C29B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1B0F2DA1C8634F80059C29B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C1B0F2DD1C8634F80059C29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1B0F2DF1C8634F80059C29B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1B0F2E21C8634F80059C29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		C1B0F2FA1C8634F80059C29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1C364361CA1DE500006211A /* MasterScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterScheduleTableViewController.swift; path = ../MasterScheduleTableViewController.swift; sourceTree = "<group>"; };
 		C1C364381CA1DE730006211A /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleDetailViewController.swift; path = ../ScheduleDetailViewController.swift; sourceTree = "<group>"; };
-		C1C3643A1CA1DFB60006211A /* Assignments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
+		C1C3643A1CA1DFB60006211A /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		C1FCDF331C8A033D009212BC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,13 +113,13 @@
 			isa = PBXGroup;
 			children = (
 				C1B0F2D81C8634F80059C29B /* AppDelegate.swift */,
-				C1B0F2DA1C8634F80059C29B /* ViewController.swift */,
+				C1B0F2DA1C8634F80059C29B /* MainViewController.swift */,
 				C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */,
 				C12CCF611C88C012003477E9 /* PushButtonView.swift */,
 				C1FCDF331C8A033D009212BC /* GraphView.swift */,
 				C1C364361CA1DE500006211A /* MasterScheduleTableViewController.swift */,
 				C1C364381CA1DE730006211A /* ScheduleDetailViewController.swift */,
-				C1C3643A1CA1DFB60006211A /* Assignments.swift */,
+				C1C3643A1CA1DFB60006211A /* Assignment.swift */,
 				C1B0F2DC1C8634F80059C29B /* Main.storyboard */,
 				C1B0F2DF1C8634F80059C29B /* Assets.xcassets */,
 				C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */,
@@ -281,11 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C3643B1CA1DFB60006211A /* Assignments.swift in Sources */,
+				C1C3643B1CA1DFB60006211A /* Assignment.swift in Sources */,
 				C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */,
 				C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */,
 				C1C364371CA1DE500006211A /* MasterScheduleTableViewController.swift in Sources */,
-				C1B0F2DB1C8634F80059C29B /* ViewController.swift in Sources */,
+				C1B0F2DB1C8634F80059C29B /* MainViewController.swift in Sources */,
 				C12CCF621C88C012003477E9 /* PushButtonView.swift in Sources */,
 				C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */,
 				C1C364391CA1DE730006211A /* ScheduleDetailViewController.swift in Sources */,

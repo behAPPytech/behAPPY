@@ -10,9 +10,22 @@ import UIKit
 
 class ScheduleDetailViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var assignment: Assignment! {
+        didSet (newAssignment) {
+            changeLabels()
+        }
+    }
+
+    func changeLabels() {
+        nameLabel?.text = assignment.title
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        changeLabels()
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +35,9 @@ class ScheduleDetailViewController: UIViewController {
     }
     
 
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -32,4 +48,11 @@ class ScheduleDetailViewController: UIViewController {
     }
     */
 
+}
+
+
+extension ScheduleDetailViewController: AssignmentSelectDelegate {
+    func assignmentSelected(newAssignment: Assignment) {
+        assignment = newAssignment
+    }
 }
