@@ -12,7 +12,7 @@ protocol AssignmentSelectDelegate: class {
     func assignmentSelected(newAssignment: Assignment)
 }
 
-class MasterScheduleTableViewController: UITableViewController {
+class MasterScheduleTableViewController: UITableViewController, NewItemViewControllerDelegate {
     
     var assignments = [Assignment]()
     weak var delegate: AssignmentSelectDelegate?
@@ -74,6 +74,8 @@ class MasterScheduleTableViewController: UITableViewController {
             splitViewController?.showDetailViewController(scheduleDetailViewController, sender: nil)
         }
     }
+    
+
     
 
     /*
