@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LPz-vn-gXf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -109,7 +109,7 @@
         <!--Assignments-->
         <scene sceneID="dS7-KK-gbh">
             <objects>
-                <tableViewController id="6V1-Kc-lVf" sceneMemberID="viewController">
+                <tableViewController id="6V1-Kc-lVf" customClass="ScheduleViewController" customModule="behAPPy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OT7-U9-iEB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,6 +121,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OSD-Yp-e8i" id="WKY-xs-2A3">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="734" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS2-RA-jrM">
+                                            <rect key="frame" x="8" y="0.0" width="545" height="35"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -132,14 +140,14 @@
                     <navigationItem key="navigationItem" title="Assignments" id="ADH-Bd-h5E">
                         <barButtonItem key="rightBarButtonItem" title="+" systemItem="add" id="lfQ-y7-z3q">
                             <connections>
-                                <segue destination="k5F-gq-oKr" kind="presentation" identifier="newAssignment" id="z8X-Ja-QaY"/>
+                                <segue destination="k5F-gq-oKr" kind="presentation" id="Tdh-2B-wNT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFv-aw-oMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="-579"/>
+            <point key="canvasLocation" x="1747" y="-579"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -571,13 +579,13 @@
         <!--New Assignment-->
         <scene sceneID="EP0-VS-baG">
             <objects>
-                <tableViewController id="fig-aR-S3N" sceneMemberID="viewController">
+                <tableViewController id="fig-aR-S3N" customClass="NewScheduleViewController" customModule="behAPPy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Tml-CQ-5Nc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection id="CLN-14-baR">
+                            <tableViewSection footerTitle="" id="CLN-14-baR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ITn-7b-OeC">
                                         <rect key="frame" x="0.0" y="99" width="600" height="44"/>
@@ -590,6 +598,10 @@
                                                     <rect key="frame" x="8" y="4" width="584" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="done" destination="fig-aR-S3N" eventType="editingDidEndOnExit" id="6nU-wV-a4k"/>
+                                                        <outlet property="delegate" destination="fig-aR-S3N" id="whw-wM-O60"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -603,9 +615,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Assignment" id="GBF-fh-OKh">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="qwx-Kr-fjZ"/>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="GGZ-ZC-OY9"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="qwx-Kr-fjZ">
+                            <connections>
+                                <action selector="cancel" destination="fig-aR-S3N" id="zHW-zN-5xj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="GGZ-ZC-OY9">
+                            <connections>
+                                <action selector="done" destination="fig-aR-S3N" id="BsO-mp-cLX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="GGZ-ZC-OY9" id="vGo-G4-weF"/>
+                        <outlet property="textView" destination="sMa-hX-ya7" id="X37-2T-x82"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwY-Ng-OQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
