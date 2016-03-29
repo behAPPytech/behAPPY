@@ -63,7 +63,6 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
     
     func didCancel(controller: NewScheduleViewController) {
         print("did cancel")
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func newAssignment(controller: NewScheduleViewController, didFinishAddingAssignment assignment: Assignment) {
@@ -76,6 +75,9 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         let indexPaths = [indexPath]
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBAction func back(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     

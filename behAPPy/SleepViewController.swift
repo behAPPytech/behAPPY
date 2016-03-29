@@ -18,6 +18,9 @@ class SleepViewController: UIViewController {
     @IBOutlet weak var averageSleep: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
     
+    @IBAction func back(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +51,6 @@ class SleepViewController: UIViewController {
 //    let averageWater = NSUserDefaults.standardUserDefaults().integerForKey(average) as! int
     
     func setupGraphDisplay() {
-
         let noOfDays:Int = 7
         graphView.graphPoints[graphView.graphPoints.count-1] = counter
         graphView.setNeedsDisplay()

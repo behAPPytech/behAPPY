@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LPz-vn-gXf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -138,9 +138,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Assignments" id="ADH-Bd-h5E">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="U8o-vm-lqX">
+                            <connections>
+                                <action selector="back:" destination="6V1-Kc-lVf" id="qVe-uI-x2R"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" systemItem="add" id="lfQ-y7-z3q">
                             <connections>
-                                <segue destination="k5F-gq-oKr" kind="presentation" id="Tdh-2B-wNT"/>
+                                <segue destination="k5F-gq-oKr" kind="presentation" identifier="newAssignment" id="Tdh-2B-wNT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -236,6 +241,9 @@
                                     <constraint firstAttribute="width" constant="39" id="PBs-DZ-AXg"/>
                                 </constraints>
                                 <state key="normal" title="Sleep"/>
+                                <connections>
+                                    <segue destination="rKe-MZ-5it" kind="presentation" id="y6d-c2-HES"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69051376963696254" green="1" blue="0.9884923887901107" alpha="1" colorSpace="calibratedRGB"/>
@@ -454,18 +462,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-rc-ris" customClass="PushButtonView" customModule="behAPPy" customModuleProvider="target">
-                                <rect key="frame" x="129" y="502" width="75" height="75"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.59215686270000001" green="0.058823529409999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnPushButton:" destination="ABg-7O-Xjm" eventType="touchUpInside" id="6tl-Ts-lcR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbG-nO-VJV" customClass="PushButtonView" customModule="behAPPy" customModuleProvider="target">
                                 <rect key="frame" x="219" y="502" width="75" height="75"/>
                                 <userDefinedRuntimeAttributes>
@@ -487,7 +483,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nen-rl-W6q" userLabel="ContainerView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="430"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wR4-MU-DMw">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wR4-MU-DMw" customClass="GraphView" customModule="behAPPy" customModuleProvider="target">
                                         <rect key="frame" x="20" y="9" width="560" height="412"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jos-sI-h3A">
@@ -522,11 +518,27 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-rc-ris" customClass="PushButtonView" customModule="behAPPy" customModuleProvider="target">
+                                <rect key="frame" x="129" y="502" width="75" height="75"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.59215686270000001" green="0.058823529409999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnPushButton:" destination="ABg-7O-Xjm" eventType="touchUpInside" id="6tl-Ts-lcR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83921568627450982" green="0.94117647058823528" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sleep" id="iJM-Ox-1Qf">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Axp-pt-m4x"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Axp-pt-m4x">
+                            <connections>
+                                <action selector="back:" destination="ABg-7O-Xjm" id="kp0-lg-TT8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CounterLabel" destination="O0U-uf-vBs" id="OnX-Hp-5yy"/>

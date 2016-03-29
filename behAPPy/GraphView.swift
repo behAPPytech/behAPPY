@@ -30,9 +30,9 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let graphPointsDefault = NSUserDefaults.standardUserDefaults()
-        graphPoints = graphPointsDefault.valueForKey("graphPoints") as! Array
+//        
+//        let graphPointsDefault = NSUserDefaults.standardUserDefaults()
+//        graphPoints = graphPointsDefault.valueForKey("graphPoints") as! Array
         
     }
     

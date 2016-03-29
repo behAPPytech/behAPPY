@@ -29,6 +29,7 @@ class NewScheduleViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func cancel() {
         print("cancel pressed")
         delegate?.didCancel(self)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func done() {
