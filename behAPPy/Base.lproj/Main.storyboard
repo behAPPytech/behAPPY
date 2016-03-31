@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -125,11 +125,14 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="734" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS2-RA-jrM">
                                             <rect key="frame" x="8" y="0.0" width="545" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="X8y-ox-uMz" kind="presentation" id="GI6-QP-JAS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -237,7 +240,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everythings Going to Be Alright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWj-lU-KEI">
                                         <rect key="frame" x="11" y="98" width="239" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -655,10 +658,10 @@
             </objects>
             <point key="canvasLocation" x="3278" y="-579"/>
         </scene>
-        <!--View Controller-->
+        <!--Assignment Detail View Controller-->
         <scene sceneID="gMQ-0W-vJP">
             <objects>
-                <viewController id="AwF-bR-xUh" sceneMemberID="viewController">
+                <viewController id="AwF-bR-xUh" customClass="AssignmentDetailViewController" customModule="behAPPy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0DM-di-0yF"/>
                         <viewControllerLayoutGuide type="bottom" id="OrC-rV-aWB"/>
@@ -683,12 +686,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="5sn-H5-7Lc">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="V81-L4-peJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="V81-L4-peJ">
+                            <connections>
+                                <action selector="back" destination="AwF-bR-xUh" id="dNp-Ji-98X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="R8I-Qa-7zO">
+                            <connections>
+                                <action selector="edit" destination="AwF-bR-xUh" id="f1n-y9-jHZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="V81-L4-peJ" id="LYQ-AZ-O6U"/>
+                        <outlet property="editButton" destination="R8I-Qa-7zO" id="Dfq-Bf-J9E"/>
+                        <outlet property="notesTextView" destination="4c6-IZ-1SD" id="sNf-8v-fb8"/>
+                        <outlet property="titleTextField" destination="AEu-ws-D6o" id="IMn-4I-GvI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ff-sL-ICh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3328" y="-1337"/>
+            <point key="canvasLocation" x="3278" y="-1337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i5c-Hn-r2M">

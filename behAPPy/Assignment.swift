@@ -11,7 +11,12 @@ import UIKit
 
 class Assignment: NSObject, NSCoding {
     
-    var title = ""
+    var title: String
+    
+    init(title:String) {
+        self.title = title
+    }
+
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(title, forKey: "Title")
@@ -22,8 +27,4 @@ class Assignment: NSObject, NSCoding {
         super.init()
     }
     
-    
-    override init() {
-        super.init()
-    }
 }

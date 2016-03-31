@@ -1,0 +1,70 @@
+//
+//  AssignmentDetailsViewController.swift
+//  behAPPy
+//
+//  Created by block7 on 3/31/16.
+//  Copyright © 2016 block7. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class AssignmentDetailViewController: UIViewController {
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
+    var isChanging = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateButtons()
+
+    }
+    
+    func updateButtons() {
+        
+        if isChanging == false {
+            editButton.title = "Edit"
+            backButton.title = "Back"
+            titleTextField.enabled = false
+            notesTextView.editable = false
+            notesTextView.selectable = false
+        } else if isChanging == true {
+            editButton.title = "Save"
+            backButton.title = "Cancel"
+        }
+    }
+    
+    @IBAction func back() {
+        if isChanging == false {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else if isChanging == true {
+            isChanging = false
+            updateButtons()
+        }
+    }
+    
+    func save() {
+        
+    }
+    
+    @IBAction func edit() {
+        isChanging = true
+        updateButtons()
+        titleTextField.enabled = true
+        notesTextView.editable = false
+        notesTextView.selectable = false
+        if isChanging == true {
+            save()
+            titleTextField.enabled = false
+            notesTextView.editable = false
+        }
+    }
+
+    
+    
+    
+}

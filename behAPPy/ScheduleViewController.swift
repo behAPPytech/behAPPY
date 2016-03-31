@@ -30,13 +30,23 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         data.writeToFile(dataFilePath(), atomically: true)
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         assignments = [Assignment]()
         
         super.init(coder: aDecoder)
-        
-        print("Documents folder is \(documentsDirectory())")
-        print("Data file path is \(dataFilePath())")
+        loadAssignments()
+    }
+    
+    func loadAssignments() {
+        let path = dataFilePath()
+        if NSFileManager.defaultManager().fileExistsAtPath(path) {
+            if let data = NSData(contentsOfFile: path) {
+            let unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
+                assignments = unarchiver.decodeObjectForKey("AssignmentItems") as! [Assignment]
+                unarchiver.finishDecoding()
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -55,7 +65,8 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         let cell = tableView.dequeueReusableCellWithIdentifier("assignmentItemCell", forIndexPath: indexPath)
         let assignment = assignments[indexPath.row]
         textForRow(cell, withAssignment: assignment)
-        
+        saveSchedule()
+
         return cell
     }
     
