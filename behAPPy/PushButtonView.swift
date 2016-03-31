@@ -17,13 +17,13 @@ class PushButtonView: UIButton {
     
 
     override func drawRect(rect: CGRect) {
-        var path = UIBezierPath(ovalInRect: rect)
+        let path = UIBezierPath(ovalInRect: rect)
         fillColor.setFill()
         path.fill()
         
         let plusHeight: CGFloat = 3.0
         let plusWidth: CGFloat = min(bounds.width, bounds.height) * 0.6
-        var plusPath = UIBezierPath()
+        let plusPath = UIBezierPath()
         plusPath.lineWidth = plusHeight
         
         plusPath.moveToPoint(CGPoint(

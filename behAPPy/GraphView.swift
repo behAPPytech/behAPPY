@@ -111,7 +111,7 @@ import UIKit
 //        print("graph points: \(graphPoints)")
 
         
-        var path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
         path.addClip()
 
         let context = UIGraphicsGetCurrentContext()
@@ -136,7 +136,7 @@ import UIKit
         let bottomBorder:CGFloat = 80
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = graphPoints.maxElement()
-        var columnYPoint = {(graphPoint:Int) -> CGFloat in
+        let columnYPoint = {(graphPoint:Int) -> CGFloat in
             var y:CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
             y = graphHeight + topBorder - y
             return y
@@ -145,7 +145,7 @@ import UIKit
         
         UIColor.whiteColor().setFill()
         UIColor.whiteColor().setStroke()
-        var graphPath = UIBezierPath()
+        let graphPath = UIBezierPath()
         graphPath.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(graphPoints[0])))
         for i in 1..<graphPoints.count {
             let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
@@ -153,7 +153,7 @@ import UIKit
         }
         
         CGContextSaveGState(context)
-        var clippingPath = graphPath.copy() as! UIBezierPath
+        let clippingPath = graphPath.copy() as! UIBezierPath
         clippingPath.addLineToPoint(CGPoint(x:columnXPoint(graphPoints.count - 1), y:height))
         clippingPath.addLineToPoint(CGPoint(x:columnXPoint(0),y: height))
         clippingPath.closePath()
@@ -180,7 +180,7 @@ import UIKit
             circle.fill()
         }
         
-        var linePath = UIBezierPath()
+        let linePath = UIBezierPath()
         
         linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
         linePath.addLineToPoint(CGPoint(x: width - margin, y:topBorder))

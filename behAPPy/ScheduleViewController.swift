@@ -13,17 +13,30 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
     
     var assignments: [Assignment]
     
+    func documentsDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> String {
+        return (documentsDirectory() as NSString).stringByAppendingPathComponent("behAPPy.plist")
+    }
+    
+    func saveSchedule() {
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
+        archiver.encodeObject(assignments, forKey: "AssignmentItems")
+        archiver.finishEncoding()
+        data.writeToFile(dataFilePath(), atomically: true)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         assignments = [Assignment]()
         
-        let row1 = Assignment(title: "hello")
-        let row2 = Assignment(title: "cat")
-        let row3 = Assignment(title: "dog")
-        assignments.append(row1)
-        assignments.append(row2)
-        assignments.append(row3)
-        
         super.init(coder: aDecoder)
+        
+        print("Documents folder is \(documentsDirectory())")
+        print("Data file path is \(dataFilePath())")
     }
     
     override func viewDidLoad() {
@@ -53,17 +66,14 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         
         let indexPaths = [indexPath]
         tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        saveSchedule()
     }
     
     func textForRow(cell: UITableViewCell, withAssignment assignment: Assignment) {
         let label = cell.viewWithTag(734) as! UILabel
         label.text = assignment.title
     }
-    
-    
-    func didCancel(controller: NewScheduleViewController) {
-        print("did cancel")
-    }
+
     
     func newAssignment(controller: NewScheduleViewController, didFinishAddingAssignment assignment: Assignment) {
         print("new assignment added")
@@ -76,6 +86,7 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         
         dismissViewControllerAnimated(true, completion: nil)
+        saveSchedule()
     }
     @IBAction func back(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

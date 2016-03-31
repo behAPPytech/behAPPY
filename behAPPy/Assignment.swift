@@ -9,15 +9,21 @@
 import Foundation
 import UIKit
 
-class Assignment {
+class Assignment: NSObject, NSCoding {
     
-    var title: String
+    var title = ""
     
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(title, forKey: "Title")
+    }
     
-    init(title: String) {
-        self.title = title
+    required init?(coder aDecoder: NSCoder) {
+        title = aDecoder.decodeObjectForKey("Title") as! String
+        super.init()
     }
     
     
-    
+    override init() {
+        super.init()
+    }
 }

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol NewScheduleViewControllerDelegate: class {
-    func didCancel(controller: NewScheduleViewController)
     func newAssignment(controller: NewScheduleViewController, didFinishAddingAssignment assignment: Assignment)
 }
 
@@ -27,8 +26,6 @@ class NewScheduleViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel() {
-        print("cancel pressed")
-        delegate?.didCancel(self)
         dismissViewControllerAnimated(true, completion: nil)
     }
     
