@@ -14,7 +14,7 @@ protocol NewScheduleViewControllerDelegate: class {
 }
 
 class NewScheduleViewController: UITableViewController, UITextFieldDelegate {
-    
+
     @IBOutlet weak var textView: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     

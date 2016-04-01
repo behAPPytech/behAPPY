@@ -112,6 +112,9 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! AssignmentDetailViewController
             controller.delegate = self
+            if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
+                controller.itemToEdit = assignments[indexPath.row]
+            }
         }
     }
     

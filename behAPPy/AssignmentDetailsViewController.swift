@@ -19,17 +19,21 @@ class AssignmentDetailViewController: UIViewController, UITextFieldDelegate, UIT
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
-    
+        
     weak var delegate: AssignmentDetailViewControllerDelegate?
-    
+    var itemToEdit: Assignment?
     var isChanging = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateButtons()
-
+        titleTextField.text = itemToEdit?.title
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
     func updateButtons() {
         
         if isChanging == false {
