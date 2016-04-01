@@ -12,6 +12,9 @@ import UIKit
 class Assignment: NSObject, NSCoding {
     
     var title: String
+//    var notes: String
+//    var dueDate: NSDate
+//    var priority: Int
     
     init(title:String) {
         self.title = title

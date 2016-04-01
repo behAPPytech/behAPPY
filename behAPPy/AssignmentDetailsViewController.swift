@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
-class AssignmentDetailViewController: UIViewController {
+protocol AssignmentDetailViewControllerDelegate: class {
+    func updateTitle(controller: AssignmentDetailViewController)
+}
+
+class AssignmentDetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    
+    weak var delegate: AssignmentDetailViewControllerDelegate?
     
     var isChanging = false
     
@@ -52,15 +58,19 @@ class AssignmentDetailViewController: UIViewController {
     }
     
     @IBAction func edit() {
-        isChanging = true
-        updateButtons()
-        titleTextField.enabled = true
-        notesTextView.editable = false
-        notesTextView.selectable = false
-        if isChanging == true {
+        if isChanging == false {
+            isChanging = true
+            updateButtons()
+            titleTextField.enabled = true
+            notesTextView.editable = true
+            notesTextView.selectable = true
+        } else if isChanging == true {
             save()
+            isChanging = false
+            updateButtons()
             titleTextField.enabled = false
             notesTextView.editable = false
+            notesTextView.selectable = false
         }
     }
 

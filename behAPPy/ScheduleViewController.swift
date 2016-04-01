@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ScheduleViewController: UITableViewController, NewScheduleViewControllerDelegate {
+class ScheduleViewController: UITableViewController, NewScheduleViewControllerDelegate, AssignmentDetailViewControllerDelegate {
     
     var assignments: [Assignment]
     
@@ -108,7 +108,16 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! NewScheduleViewController
             controller.delegate = self
+        } else if segue.identifier == "assignmentDetails" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! AssignmentDetailViewController
+            controller.delegate = self
         }
+    }
+    
+    
+    func updateTitle(controller: AssignmentDetailViewController) {
+        print("Delegate Works")
     }
     
 }
