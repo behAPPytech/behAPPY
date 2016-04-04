@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */; };
 		C12CCF621C88C012003477E9 /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12CCF611C88C012003477E9 /* PushButtonView.swift */; };
-		C14F68221CADA12C008F739C /* AssignmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F68211CADA12C008F739C /* AssignmentDetailsViewController.swift */; };
 		C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2D81C8634F80059C29B /* AppDelegate.swift */; };
 		C1B0F2DB1C8634F80059C29B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2DA1C8634F80059C29B /* MainViewController.swift */; };
 		C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2DC1C8634F80059C29B /* Main.storyboard */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		C12CCF611C88C012003477E9 /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
-		C14F68211CADA12C008F739C /* AssignmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentDetailsViewController.swift; sourceTree = "<group>"; };
 		C1B0F2D51C8634F80059C29B /* behAPPy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = behAPPy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0F2D81C8634F80059C29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B0F2DA1C8634F80059C29B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				C1C3643A1CA1DFB60006211A /* Assignment.swift */,
 				C1E14D281CAAE7B700EFE72A /* ScheduleViewController.swift */,
 				C1E14D2A1CAAE7C700EFE72A /* NewScheduleViewController.swift */,
-				C14F68211CADA12C008F739C /* AssignmentDetailsViewController.swift */,
 				C1B0F2DC1C8634F80059C29B /* Main.storyboard */,
 				C1B0F2DF1C8634F80059C29B /* Assets.xcassets */,
 				C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */,
@@ -285,7 +282,6 @@
 				C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */,
 				C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */,
 				C1B0F2DB1C8634F80059C29B /* MainViewController.swift in Sources */,
-				C14F68221CADA12C008F739C /* AssignmentDetailsViewController.swift in Sources */,
 				C12CCF621C88C012003477E9 /* PushButtonView.swift in Sources */,
 				C1E14D291CAAE7B700EFE72A /* ScheduleViewController.swift in Sources */,
 				C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */,
@@ -433,6 +429,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = behAPPy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = behAPPytech.behAPPy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +444,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = behAPPy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = behAPPytech.behAPPy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

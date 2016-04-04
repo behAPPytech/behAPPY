@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ScheduleViewController: UITableViewController, NewScheduleViewControllerDelegate, AssignmentDetailViewControllerDelegate {
+class ScheduleViewController: UITableViewController, NewScheduleViewControllerDelegate {
     
     var assignments: [Assignment]
     
@@ -99,6 +99,7 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         dismissViewControllerAnimated(true, completion: nil)
         saveSchedule()
     }
+    
     @IBAction func back(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -108,21 +109,13 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! NewScheduleViewController
             controller.delegate = self
-        } else if segue.identifier == "assignmentDetails" {
+        } else if segue.identifier == "editAssignment" {
             let navigationController = segue.destinationViewController as! UINavigationController
-            let controller = navigationController.topViewController as! AssignmentDetailViewController
+            let controller = navigationController.topViewController as! NewScheduleViewController
             controller.delegate = self
-            if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
-                controller.itemToEdit = assignments[indexPath.row]
-            }
         }
     }
-    
-    
-    func updateTitle(controller: AssignmentDetailViewController) {
-        print("Delegate Works")
-    }
-    
+
 }
 
 
