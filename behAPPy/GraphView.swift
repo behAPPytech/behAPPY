@@ -9,10 +9,7 @@ import Foundation
 import UIKit
 
 @IBDesignable class GraphView: UIView {
-    var graphPoints:[Int] = [0,0,0,0,0,0,0]
-    var points:[Int] = [0,0,0,0,0,0,0]
-    
-
+    var graphPoints:[Int] = [7,0,5,7,3,2,6]
 
 
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
@@ -38,62 +35,62 @@ import UIKit
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layerOne = CATextLayer()
-        layerTwo = CATextLayer()
-        layerThree = CATextLayer()
-        layerFour = CATextLayer()
-        layerFive = CATextLayer()
-        layerSix = CATextLayer()
-        layerSeven = CATextLayer()
-        
-        
-        let frame1 = CGRect(x: 14, y:360, width: 15, height: 21)
-        let frame2 = CGRect(x: 100, y:360, width: 15, height: 21)
-        let frame3 = CGRect(x: 186, y:360, width: 15, height: 21)
-        let frame4 = CGRect(x: 272, y:360, width: 15, height: 21)
-        let frame5 = CGRect(x: 358, y:360, width: 15, height: 21)
-        let frame6 = CGRect(x: 444, y:360, width: 15, height: 21)
-        let frame7 = CGRect(x: 530, y:360, width: 15, height: 21)
-
-        layerOne.frame = frame1
-        layerTwo.frame = frame2
-        layerThree.frame = frame3
-        layerFour.frame = frame4
-        layerFive.frame = frame5
-        layerSix.frame = frame6
-        layerSeven.frame = frame7
-
-        layerOne.string = "M"
-        layerTwo.string = "M"
-        layerThree.string = "M"
-        layerFive.string = "M"
-        layerFour.string = "M"
-        layerSix.string = "M"
-        layerSeven.string = "M"
-
-        layerOne.fontSize = 17
-        layerTwo.fontSize = 17
-        layerThree.fontSize = 17
-        layerFour.fontSize = 17
-        layerFive.fontSize = 17
-        layerSix.fontSize = 17
-        layerSeven.fontSize = 17
-
-        layerOne.foregroundColor = UIColor.blackColor().CGColor
-        layerTwo.foregroundColor = UIColor.blackColor().CGColor
-        layerThree.foregroundColor = UIColor.blackColor().CGColor
-        layerFour.foregroundColor = UIColor.blackColor().CGColor
-        layerFive.foregroundColor = UIColor.blackColor().CGColor
-        layerSix.foregroundColor = UIColor.blackColor().CGColor
-        layerSeven.foregroundColor = UIColor.blackColor().CGColor
-
-        self.layer.addSublayer(layerOne)
-        self.layer.addSublayer(layerTwo)
-        self.layer.addSublayer(layerThree)
-        self.layer.addSublayer(layerFour)
-        self.layer.addSublayer(layerFive)
-        self.layer.addSublayer(layerSix)
-        self.layer.addSublayer(layerSeven)
+//        layerOne = CATextLayer()
+//        layerTwo = CATextLayer()
+//        layerThree = CATextLayer()
+//        layerFour = CATextLayer()
+//        layerFive = CATextLayer()
+//        layerSix = CATextLayer()
+//        layerSeven = CATextLayer()
+//        
+//        
+//        let frame1 = CGRect(x: 14, y:360, width: 15, height: 21)
+//        let frame2 = CGRect(x: 100, y:360, width: 15, height: 21)
+//        let frame3 = CGRect(x: 186, y:360, width: 15, height: 21)
+//        let frame4 = CGRect(x: 272, y:360, width: 15, height: 21)
+//        let frame5 = CGRect(x: 358, y:360, width: 15, height: 21)
+//        let frame6 = CGRect(x: 444, y:360, width: 15, height: 21)
+//        let frame7 = CGRect(x: 530, y:360, width: 15, height: 21)
+//
+//        layerOne.frame = frame1
+//        layerTwo.frame = frame2
+//        layerThree.frame = frame3
+//        layerFour.frame = frame4
+//        layerFive.frame = frame5
+//        layerSix.frame = frame6
+//        layerSeven.frame = frame7
+//
+//        layerOne.string = "M"
+//        layerTwo.string = "M"
+//        layerThree.string = "M"
+//        layerFive.string = "M"
+//        layerFour.string = "M"
+//        layerSix.string = "M"
+//        layerSeven.string = "M"
+//
+//        layerOne.fontSize = 17
+//        layerTwo.fontSize = 17
+//        layerThree.fontSize = 17
+//        layerFour.fontSize = 17
+//        layerFive.fontSize = 17
+//        layerSix.fontSize = 17
+//        layerSeven.fontSize = 17
+//
+//        layerOne.foregroundColor = UIColor.blackColor().CGColor
+//        layerTwo.foregroundColor = UIColor.blackColor().CGColor
+//        layerThree.foregroundColor = UIColor.blackColor().CGColor
+//        layerFour.foregroundColor = UIColor.blackColor().CGColor
+//        layerFive.foregroundColor = UIColor.blackColor().CGColor
+//        layerSix.foregroundColor = UIColor.blackColor().CGColor
+//        layerSeven.foregroundColor = UIColor.blackColor().CGColor
+//
+//        self.layer.addSublayer(layerOne)
+//        self.layer.addSublayer(layerTwo)
+//        self.layer.addSublayer(layerThree)
+//        self.layer.addSublayer(layerFour)
+//        self.layer.addSublayer(layerFive)
+//        self.layer.addSublayer(layerSix)
+//        self.layer.addSublayer(layerSeven)
         
         
 
@@ -132,8 +129,8 @@ import UIKit
             return x
         }
             
-        let topBorder:CGFloat = 96
-        let bottomBorder:CGFloat = 80
+        let topBorder:CGFloat = 60
+        let bottomBorder:CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = graphPoints.maxElement()
         let columnYPoint = {(graphPoint:Int) -> CGFloat in

@@ -17,6 +17,7 @@ class NewScheduleViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textView: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var dateLabel: UILabel!
     
     weak var delegate: NewScheduleViewControllerDelegate?
     
