@@ -18,6 +18,7 @@ class NewScheduleViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var textView: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var notesView: UITextView!
     
     weak var delegate: NewScheduleViewControllerDelegate?
     
@@ -32,6 +33,7 @@ class NewScheduleViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func done() {
         print("done pressed")
+        print(notesView.text)
         let assignment = Assignment(title: textView.text!)
         delegate?.newAssignment(self, didFinishAddingAssignment: assignment)
     }
