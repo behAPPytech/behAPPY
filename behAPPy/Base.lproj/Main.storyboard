@@ -164,7 +164,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="k5F-gq-oKr" kind="presentation" trigger="accessoryAction" id="Ez2-Tk-IC2"/>
+                                    <segue destination="k5F-gq-oKr" kind="presentation" identifier="EditAssignment" trigger="accessoryAction" id="Ez2-Tk-IC2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -246,7 +246,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Help" id="vwy-fW-Pdx">
                                         <connections>
-                                            <segue destination="d3F-T8-HiC" kind="presentation" id="Xix-qW-DTN"/>
+                                            <segue destination="d3F-T8-HiC" kind="presentation" id="vIq-Qc-wJj"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -384,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJU-EN-jF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="1016"/>
+            <point key="canvasLocation" x="212" y="1002"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="V5n-1y-Ow5">
@@ -932,9 +932,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t5d-6A-4d8"/>
-        <segue reference="Vt0-Kh-alj"/>
         <segue reference="Z1s-cq-4wm"/>
-        <segue reference="Tdh-2B-wNT"/>
+        <segue reference="6eF-Ts-w2a"/>
+        <segue reference="Mue-cf-d80"/>
+        <segue reference="Ez2-Tk-IC2"/>
     </inferredMetricsTieBreakers>
 </document>

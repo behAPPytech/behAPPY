@@ -85,6 +85,10 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         label.text = assignment.title
     }
 
+   
+    @IBAction func back(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     func newAssignment(controller: NewScheduleViewController, didFinishAddingAssignment assignment: Assignment) {
         print("new assignment added")
@@ -100,7 +104,13 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
         saveSchedule()
     }
     
-    @IBAction func back(sender: AnyObject) {
+    func newScheduleViewController(controller: NewScheduleViewController, didFinishEditingAssignment assignment: Assignment) {
+        if let index = assignments.indexOf(assignment) {
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+                textForRow(cell, withAssignment: assignment)
+            }
+        }
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -109,11 +119,16 @@ class ScheduleViewController: UITableViewController, NewScheduleViewControllerDe
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! NewScheduleViewController
             controller.delegate = self
-        } else if segue.identifier == "editAssignment" {
+        } else if segue.identifier == "EditAssignment" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! NewScheduleViewController
             controller.delegate = self
-        }
+         
+            if let indexPath = tableView.indexPathForCell( sender as! UITableViewCell) {
+                controller.assignmentToEdit = assignments[indexPath.row]
+            }
+            
+        } 
     }
 
 }
