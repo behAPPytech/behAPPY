@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Assignment: NSObject {
+class Assignment: NSObject, NSCoding {
     
     var title: String
 //    var notes: String
@@ -18,7 +18,7 @@ class Assignment: NSObject {
     
     init(title:String) {
         self.title = title
-//        self.notes = notes
+//         self.notes = notes
         super.init()
     }
 
