@@ -59,7 +59,6 @@ class SleepViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(average, forKey: "averageSleep")
         averageSleep.text = "Average: \(average)"
         
-//        let dateFormatter = NSDateFormatter()
         let calendar = NSCalendar.currentCalendar()
         let componentOptions:NSCalendarUnit = .Weekday
         let components = calendar.components(componentOptions, fromDate: NSDate())

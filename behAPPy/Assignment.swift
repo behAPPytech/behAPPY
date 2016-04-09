@@ -11,17 +11,19 @@ import UIKit
 
 class Assignment: NSObject, NSCoding {
     
-    var title: String
-//    var notes: String
+    var title:String
+//    var notes:String
 //    var dueDate: NSDate
-//    var priority: Int
+//    var priority: Inte    
     
-    init(title:String) {
+    required init(title: String) {
         self.title = title
+<<<<<<< HEAD
 //         self.notes = notes
         super.init()
+=======
+>>>>>>> 0c9191c3fed423cdbd9fead773201f570e6dbd9b
     }
-
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(title, forKey: "Title")
