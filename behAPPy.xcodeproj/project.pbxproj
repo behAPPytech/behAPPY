@@ -16,10 +16,11 @@
 		C1B0F2E31C8634F80059C29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */; };
 		C1B0F2EE1C8634F80059C29B /* behAPPyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2ED1C8634F80059C29B /* behAPPyTests.swift */; };
 		C1B0F2F91C8634F80059C29B /* behAPPyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F2F81C8634F80059C29B /* behAPPyUITests.swift */; };
-		C1C3643B1CA1DFB60006211A /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3643A1CA1DFB60006211A /* Assignment.swift */; };
-		C1E14D291CAAE7B700EFE72A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E14D281CAAE7B700EFE72A /* ScheduleViewController.swift */; };
-		C1E14D2B1CAAE7C700EFE72A /* NewScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E14D2A1CAAE7C700EFE72A /* NewScheduleViewController.swift */; };
 		C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCDF331C8A033D009212BC /* GraphView.swift */; };
+		E10B30821CB9A4C90020A685 /* AssignmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B30811CB9A4C90020A685 /* AssignmentsViewController.swift */; };
+		E10B30841CB9AAB80020A685 /* AssignmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B30831CB9AAB80020A685 /* AssignmentItem.swift */; };
+		E10B30861CB9B22C0020A685 /* NewAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B30851CB9B22C0020A685 /* NewAssignmentViewController.swift */; };
+		E10B30881CBADCD40020A685 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B30871CBADCD40020A685 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +56,11 @@
 		C1B0F2F41C8634F80059C29B /* behAPPyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = behAPPyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0F2F81C8634F80059C29B /* behAPPyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = behAPPyUITests.swift; sourceTree = "<group>"; };
 		C1B0F2FA1C8634F80059C29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1C3643A1CA1DFB60006211A /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
-		C1E14D281CAAE7B700EFE72A /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		C1E14D2A1CAAE7C700EFE72A /* NewScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScheduleViewController.swift; sourceTree = "<group>"; };
 		C1FCDF331C8A033D009212BC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E10B30811CB9A4C90020A685 /* AssignmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsViewController.swift; sourceTree = "<group>"; };
+		E10B30831CB9AAB80020A685 /* AssignmentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentItem.swift; sourceTree = "<group>"; };
+		E10B30851CB9B22C0020A685 /* NewAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAssignmentViewController.swift; sourceTree = "<group>"; };
+		E10B30871CBADCD40020A685 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +116,10 @@
 				C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */,
 				C12CCF611C88C012003477E9 /* PushButtonView.swift */,
 				C1FCDF331C8A033D009212BC /* GraphView.swift */,
-				C1C3643A1CA1DFB60006211A /* Assignment.swift */,
-				C1E14D281CAAE7B700EFE72A /* ScheduleViewController.swift */,
-				C1E14D2A1CAAE7C700EFE72A /* NewScheduleViewController.swift */,
+				E10B30811CB9A4C90020A685 /* AssignmentsViewController.swift */,
+				E10B30851CB9B22C0020A685 /* NewAssignmentViewController.swift */,
+				E10B30831CB9AAB80020A685 /* AssignmentItem.swift */,
+				E10B30871CBADCD40020A685 /* DataModel.swift */,
 				C1B0F2DC1C8634F80059C29B /* Main.storyboard */,
 				C1B0F2DF1C8634F80059C29B /* Assets.xcassets */,
 				C1B0F2E11C8634F80059C29B /* LaunchScreen.storyboard */,
@@ -277,14 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1E14D2B1CAAE7C700EFE72A /* NewScheduleViewController.swift in Sources */,
-				C1C3643B1CA1DFB60006211A /* Assignment.swift in Sources */,
 				C1FCDF341C8A033D009212BC /* GraphView.swift in Sources */,
+				E10B30841CB9AAB80020A685 /* AssignmentItem.swift in Sources */,
+				E10B30861CB9B22C0020A685 /* NewAssignmentViewController.swift in Sources */,
 				C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */,
 				C1B0F2DB1C8634F80059C29B /* MainViewController.swift in Sources */,
+				E10B30821CB9A4C90020A685 /* AssignmentsViewController.swift in Sources */,
 				C12CCF621C88C012003477E9 /* PushButtonView.swift in Sources */,
-				C1E14D291CAAE7B700EFE72A /* ScheduleViewController.swift in Sources */,
 				C1B0F2D91C8634F80059C29B /* AppDelegate.swift in Sources */,
+				E10B30881CBADCD40020A685 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
