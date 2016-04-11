@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 @IBDesignable class GraphView: UIView {
-    var graphPoints:[Int] = [7,0,5,7,3,2,6]
+    var graphPoints:[Int] = [0,0,0,0,0,0,0]
 
 
     @IBInspectable var startColor: UIColor = UIColor.greenColor()

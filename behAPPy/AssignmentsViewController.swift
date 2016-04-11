@@ -30,32 +30,26 @@ class AssignmentsViewController: UITableViewController, NewAssignmentViewControl
     }
     
     func loadAssignments() {
-        let path = dataFilePath()
+        let path = dataFilePath
         if NSFileManager.defaultManager().fileExistsAtPath(path) {
-            if let data = NSData(contentsOfFile: path) {
-                let unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
-                assignments = unarchiver.decodeObjectForKey("AssignmentItems") as! [AssignmentItem]
-                unarchiver.finishDecoding()
+            if let assignments = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [AssignmentItem] {
+                self.assignments = assignments
             }
         }
     }
     
-    func documentsDirectory() -> String {
+    var documentsDirectory: String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         return paths[0]
     }
     
-    func dataFilePath() -> String {
-        let directory = documentsDirectory() as NSString
+    var dataFilePath: String {
+        let directory = documentsDirectory as NSString
         return directory.stringByAppendingPathComponent("Assignments.plist")
     }
 
     func saveAssignments() {
-        let data = NSMutableData()
-        let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
-        archiver.encodeObject(assignments, forKey: "AssignmentItems")
-        archiver.finishEncoding()
-        data.writeToFile(dataFilePath(), atomically: true)
+        NSKeyedArchiver.archiveRootObject(assignments, toFile: dataFilePath)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,8 +111,13 @@ class AssignmentsViewController: UITableViewController, NewAssignmentViewControl
         
     }
     
+    @IBAction func back() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "newAssignment" {
+        if segue.identifier == "addAssignment" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! NewAssignmentViewController
             controller.delegate = self
@@ -126,8 +125,7 @@ class AssignmentsViewController: UITableViewController, NewAssignmentViewControl
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! NewAssignmentViewController
             controller.delegate = self
-            
-            
+
             if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
                 controller.assignmentToEdit = assignments[indexPath.row]
             }
