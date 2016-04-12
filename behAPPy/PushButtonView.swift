@@ -46,7 +46,7 @@ class PushButtonView: UIButton {
         }
             
         
-        UIColor.whiteColor().setStroke()
+        UIColor.blackColor().setStroke()
         plusPath.stroke()
         
 
