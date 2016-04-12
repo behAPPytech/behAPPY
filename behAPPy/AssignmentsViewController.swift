@@ -111,10 +111,6 @@ class AssignmentsViewController: UITableViewController, NewAssignmentViewControl
         
     }
     
-    @IBAction func back() {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addAssignment" {

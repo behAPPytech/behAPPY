@@ -15,97 +15,40 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.greenColor()
     @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
-
-    var layerOne:CATextLayer!
-    var layerTwo:CATextLayer!
-    var layerThree:CATextLayer!
-    var layerFour:CATextLayer!
-    var layerFive:CATextLayer!
-    var layerSix:CATextLayer!
-    var layerSeven:CATextLayer!
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        
-//        let graphPointsDefault = NSUserDefaults.standardUserDefaults()
-//        graphPoints = graphPointsDefault.valueForKey("graphPoints") as! Array
-        
+    }
+    
+    override func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(graphPoints, forKey: "points")
+        aCoder.encodeObject(NSDate(), forKey: "date")
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        layerOne = CATextLayer()
-//        layerTwo = CATextLayer()
-//        layerThree = CATextLayer()
-//        layerFour = CATextLayer()
-//        layerFive = CATextLayer()
-//        layerSix = CATextLayer()
-//        layerSeven = CATextLayer()
-//        
-//        
-//        let frame1 = CGRect(x: 14, y:360, width: 15, height: 21)
-//        let frame2 = CGRect(x: 100, y:360, width: 15, height: 21)
-//        let frame3 = CGRect(x: 186, y:360, width: 15, height: 21)
-//        let frame4 = CGRect(x: 272, y:360, width: 15, height: 21)
-//        let frame5 = CGRect(x: 358, y:360, width: 15, height: 21)
-//        let frame6 = CGRect(x: 444, y:360, width: 15, height: 21)
-//        let frame7 = CGRect(x: 530, y:360, width: 15, height: 21)
-//
-//        layerOne.frame = frame1
-//        layerTwo.frame = frame2
-//        layerThree.frame = frame3
-//        layerFour.frame = frame4
-//        layerFive.frame = frame5
-//        layerSix.frame = frame6
-//        layerSeven.frame = frame7
-//
-//        layerOne.string = "M"
-//        layerTwo.string = "M"
-//        layerThree.string = "M"
-//        layerFive.string = "M"
-//        layerFour.string = "M"
-//        layerSix.string = "M"
-//        layerSeven.string = "M"
-//
-//        layerOne.fontSize = 17
-//        layerTwo.fontSize = 17
-//        layerThree.fontSize = 17
-//        layerFour.fontSize = 17
-//        layerFive.fontSize = 17
-//        layerSix.fontSize = 17
-//        layerSeven.fontSize = 17
-//
-//        layerOne.foregroundColor = UIColor.blackColor().CGColor
-//        layerTwo.foregroundColor = UIColor.blackColor().CGColor
-//        layerThree.foregroundColor = UIColor.blackColor().CGColor
-//        layerFour.foregroundColor = UIColor.blackColor().CGColor
-//        layerFive.foregroundColor = UIColor.blackColor().CGColor
-//        layerSix.foregroundColor = UIColor.blackColor().CGColor
-//        layerSeven.foregroundColor = UIColor.blackColor().CGColor
-//
-//        self.layer.addSublayer(layerOne)
-//        self.layer.addSublayer(layerTwo)
-//        self.layer.addSublayer(layerThree)
-//        self.layer.addSublayer(layerFour)
-//        self.layer.addSublayer(layerFive)
-//        self.layer.addSublayer(layerSix)
-//        self.layer.addSublayer(layerSeven)
         
-        
-
-        
+        if let
+            date = aDecoder.decodeObjectForKey("date") as? NSDate,
+            points = aDecoder.decodeObjectForKey("points") as? [Int]
+        {
+            let calendar = NSCalendar.currentCalendar()
+            let dateSaved = calendar.startOfDayForDate(date)
+            let dateToday = calendar.startOfDayForDate(NSDate())
+            let days = Int(round(dateToday.timeIntervalSinceDate(dateSaved) / (24.0 * 60.0 * 60.0)))
+            
+            if days < 7 {
+                for idx in days..<7 {
+                    graphPoints[idx - days] = points[idx]
+                }
+            }
+        }
     }
     
     override func drawRect(rect: CGRect) {
         
         let width = rect.width
         let height = rect.height
-        
-        
-//        var graphPoints = NSUserDefaults.standardUserDefaults().objectForKey("graphPoints") as! [Int]
-//        NSUserDefaults.standardUserDefaults().setObject(points, forKey: "graphPoints")
-//        print("graph points: \(graphPoints)")
 
         
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
@@ -132,9 +75,9 @@ import UIKit
         let topBorder:CGFloat = 60
         let bottomBorder:CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = graphPoints.maxElement()
+        let maxValue = graphPoints.maxElement()!
         let columnYPoint = {(graphPoint:Int) -> CGFloat in
-            var y:CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
+            var y:CGFloat = maxValue > 0 ? CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight : 0.0
             y = graphHeight + topBorder - y
             return y
         }
@@ -156,11 +99,13 @@ import UIKit
         clippingPath.closePath()
         clippingPath.addClip()
         
-        
-        let highestYPoint = columnYPoint(maxValue!)
-        startPoint = CGPoint(x: margin, y: highestYPoint)
-        endPoint = CGPoint(x: margin, y: self.bounds.height)
-        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, [])
+        if maxValue > 0 {
+            let highestYPoint = columnYPoint(maxValue)
+            startPoint = CGPoint(x: margin, y: highestYPoint)
+            endPoint = CGPoint(x: margin, y: self.bounds.height)
+            CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, [])
+        }
+
         CGContextRestoreGState(context)
         
         graphPath.lineWidth = 2.0
