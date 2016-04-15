@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UINavigationBar.appearance().backgroundColor = UIColor.redColor()
-
+        UINavigationBar.appearance().tintColor = UIColor.purpleColor()
         
         return true
     }
