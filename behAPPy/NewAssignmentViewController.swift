@@ -36,6 +36,8 @@ class NewAssignmentViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet var classPickerCell: UITableViewCell!
     @IBOutlet var classPicker: UIPickerView!
     @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var cell1: UITableViewCell!
+    @IBOutlet weak var cell2: UITableViewCell!
     
     
     
@@ -50,6 +52,9 @@ class NewAssignmentViewController: UITableViewController, UITextFieldDelegate, U
             textField.enabled = false
             textView.editable = false
             textView.selectable = false
+            cell1.userInteractionEnabled = false
+            cell2.userInteractionEnabled = false
+            reminderSwitch.enabled = false
             if assignment.shouldRemind == true {
                 reminderSwitch.on = true
             } else {
@@ -113,6 +118,9 @@ class NewAssignmentViewController: UITableViewController, UITextFieldDelegate, U
                 textView.editable = false
                 textView.selectable = false
                 textField.enabled = false
+                reminderSwitch.enabled = false
+                cell1.userInteractionEnabled = false
+                cell2.userInteractionEnabled = false
                 assignment.notes = textView.text
                 assignment.title = textField.text!
                 assignment.userIsEditing = true
@@ -131,6 +139,9 @@ class NewAssignmentViewController: UITableViewController, UITextFieldDelegate, U
                 textView.editable = true
                 textView.selectable = true
                 textField.enabled = true
+                reminderSwitch.enabled = true
+                cell1.userInteractionEnabled = true
+                cell2.userInteractionEnabled = true
             }
         } else {
             let assignment = AssignmentItem()
@@ -202,7 +213,6 @@ class NewAssignmentViewController: UITableViewController, UITextFieldDelegate, U
     }
     
     func updateClassLabel() {
-        print(classes)
         classLabel.text = "\(classes)"
     }
     

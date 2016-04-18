@@ -15,9 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let blueColor = UIColor(red: 0.4078, green: 0.5137, blue: 1, alpha: 1.0) /* #6883ff */
         UINavigationBar.appearance().backgroundColor = UIColor.redColor()
-        UINavigationBar.appearance().tintColor = UIColor.purpleColor()
-        
+        UINavigationBar.appearance().tintColor = blueColor
+        if let font = UIFont(name: "Thonburi", size: 20),let font2 = UIFont(name: "Thonburi", size: 15), let color: UIColor? = UIColor(red: 0.4078, green: 0.5137, blue: 1, alpha: 1.0)
+        {
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font2], forState: UIControlState.Normal)
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : color!]
+        }
+
         return true
     }
 

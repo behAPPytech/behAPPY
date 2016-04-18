@@ -8,26 +8,23 @@
 import Foundation
 import UIKit
 
-@IBDesignable class GraphView: UIView {
-    var graphPoints:[Int] = [0,0,0,0,0,0,0]
+class GraphPoints: NSObject, NSCoding {
 
+    var graphPoints:[Int]!
 
-    @IBInspectable var startColor: UIColor = UIColor.greenColor()
-    @IBInspectable var endColor: UIColor = UIColor.blueColor()
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    override func encodeWithCoder(aCoder: NSCoder) {
+    func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(graphPoints, forKey: "points")
         aCoder.encodeObject(NSDate(), forKey: "date")
     }
     
+    override init() {
+        graphPoints = [0, 0, 0, 0, 0, 0, 0]
+        super.init()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
+        graphPoints = [0, 0, 0, 0, 0, 0, 0]
+
         if let
             date = aDecoder.decodeObjectForKey("date") as? NSDate,
             points = aDecoder.decodeObjectForKey("points") as? [Int]
@@ -36,7 +33,7 @@ import UIKit
             let dateSaved = calendar.startOfDayForDate(date)
             let dateToday = calendar.startOfDayForDate(NSDate())
             let days = Int(round(dateToday.timeIntervalSinceDate(dateSaved) / (24.0 * 60.0 * 60.0)))
-            
+
             if days < 7 {
                 for idx in days..<7 {
                     graphPoints[idx - days] = points[idx]
@@ -45,8 +42,37 @@ import UIKit
         }
     }
     
+}
+
+@IBDesignable class GraphView: UIView {
+    var graphPoints: GraphPoints!
+
+    @IBInspectable var startColor: UIColor = UIColor.greenColor()
+    @IBInspectable var endColor: UIColor = UIColor.blueColor()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        if let graphPoints =  NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath()) as? GraphPoints {
+            self.graphPoints = graphPoints
+        } else {
+            self.graphPoints = GraphPoints()
+        }
+    }
+
+    func documentsDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(
+            .DocumentDirectory, .UserDomainMask, true)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> String {
+        return (documentsDirectory() as NSString).stringByAppendingPathComponent("Graphpoints.plist")
+    }
+    
     override func drawRect(rect: CGRect) {
-        
+
+        let points = graphPoints.graphPoints
         let width = rect.width
         let height = rect.height
 
@@ -66,7 +92,7 @@ import UIKit
         
         let margin:CGFloat = 20.0
         let columnXPoint = { (column:Int) -> CGFloat in
-            let spacer = (width - margin*2 - 4) / (CGFloat(self.graphPoints.count - 1))
+            let spacer = (width - margin*2 - 4) / (CGFloat(points.count - 1))
             var x:CGFloat = CGFloat(column) * spacer
             x += margin + 2
             return x
@@ -75,7 +101,7 @@ import UIKit
         let topBorder:CGFloat = 60
         let bottomBorder:CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = graphPoints.maxElement()!
+        let maxValue = points.maxElement()!
         let columnYPoint = {(graphPoint:Int) -> CGFloat in
             var y:CGFloat = maxValue > 0 ? CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight : 0.0
             y = graphHeight + topBorder - y
@@ -86,15 +112,15 @@ import UIKit
         UIColor.whiteColor().setFill()
         UIColor.whiteColor().setStroke()
         let graphPath = UIBezierPath()
-        graphPath.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(graphPoints[0])))
-        for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
+        graphPath.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(points[0])))
+        for i in 1..<points.count {
+            let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(points[i]))
             graphPath.addLineToPoint(nextPoint)
         }
         
         CGContextSaveGState(context)
         let clippingPath = graphPath.copy() as! UIBezierPath
-        clippingPath.addLineToPoint(CGPoint(x:columnXPoint(graphPoints.count - 1), y:height))
+        clippingPath.addLineToPoint(CGPoint(x:columnXPoint(points.count - 1), y:height))
         clippingPath.addLineToPoint(CGPoint(x:columnXPoint(0),y: height))
         clippingPath.closePath()
         clippingPath.addClip()
@@ -111,8 +137,8 @@ import UIKit
         graphPath.lineWidth = 2.0
         graphPath.stroke()
         
-        for i in 0..<graphPoints.count {
-            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+        for i in 0..<points.count {
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(points[i]))
             point.x -= 5.0/2
             point.y -= 5.0/2
             

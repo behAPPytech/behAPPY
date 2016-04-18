@@ -12,15 +12,16 @@ import UIKit
 class SleepViewController: UIViewController {
     
     var counter = 0
-    @IBOutlet weak var CounterLabel: UILabel!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var graphView: GraphView!
-    @IBOutlet weak var averageSleep: UILabel!
-    @IBOutlet weak var maxLabel: UILabel!
-    
+    @IBOutlet var CounterLabel: UILabel!
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var graphView: GraphView!
+    @IBOutlet var averageSleep: UILabel!
+    @IBOutlet var maxLabel: UILabel!
+    @IBOutlet var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        counter = graphView.graphPoints.graphPoints.last!
         CounterLabel.text = String(counter)
         setupGraphDisplay()
 
@@ -43,16 +44,19 @@ class SleepViewController: UIViewController {
         }
         CounterLabel.text = String(counter)
         setupGraphDisplay()
+        NSKeyedArchiver.archiveRootObject(graphView.graphPoints, toFile: dataFilePath())
     }
+
     let average = 0
 //    let averageWater = NSUserDefaults.standardUserDefaults().integerForKey(average) as! int
     
     func setupGraphDisplay() {
 //        let noOfDays:Int = 7
-        graphView.graphPoints[graphView.graphPoints.count-1] = counter
+        let graphPoints = graphView.graphPoints
+        graphPoints.graphPoints[graphPoints.graphPoints.count-1] = counter
         graphView.setNeedsDisplay()
-        maxLabel.text = "\(graphView.graphPoints.maxElement()!)"
-        let average = graphView.graphPoints.reduce(0, combine: +) / graphView.graphPoints.count
+        maxLabel.text = "\(graphPoints.graphPoints.maxElement()!)"
+        let average = graphPoints.graphPoints.reduce(0, combine: +) / graphPoints.graphPoints.count
         NSUserDefaults.standardUserDefaults().setInteger(average, forKey: "averageSleep")
         averageSleep.text = "Average: \(average)"
         
@@ -76,10 +80,16 @@ class SleepViewController: UIViewController {
         
     }
     
-    
-    @IBAction func save(sender: AnyObject) {
-        
+    func documentsDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(
+            .DocumentDirectory, .UserDomainMask, true)
+        return paths[0]
     }
+    
+    func dataFilePath() -> String {
+        return (documentsDirectory() as NSString).stringByAppendingPathComponent("Graphpoints.plist")
+    }
+
     
 
 }
