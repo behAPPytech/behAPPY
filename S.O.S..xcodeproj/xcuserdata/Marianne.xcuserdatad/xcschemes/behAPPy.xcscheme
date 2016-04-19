@@ -17,7 +17,7 @@
                BlueprintIdentifier = "C1B0F2D41C8634F80059C29B"
                BuildableName = "behAPPy.app"
                BlueprintName = "behAPPy"
-               ReferencedContainer = "container:behAPPy.xcodeproj">
+               ReferencedContainer = "container:S.O.S..xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "C1B0F2E81C8634F80059C29B"
                BuildableName = "behAPPyTests.xctest"
                BlueprintName = "behAPPyTests"
-               ReferencedContainer = "container:behAPPy.xcodeproj">
+               ReferencedContainer = "container:S.O.S..xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "C1B0F2F31C8634F80059C29B"
                BuildableName = "behAPPyUITests.xctest"
                BlueprintName = "behAPPyUITests"
-               ReferencedContainer = "container:behAPPy.xcodeproj">
+               ReferencedContainer = "container:S.O.S..xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "C1B0F2D41C8634F80059C29B"
             BuildableName = "behAPPy.app"
             BlueprintName = "behAPPy"
-            ReferencedContainer = "container:behAPPy.xcodeproj">
+            ReferencedContainer = "container:S.O.S..xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "C1B0F2D41C8634F80059C29B"
             BuildableName = "behAPPy.app"
             BlueprintName = "behAPPy"
-            ReferencedContainer = "container:behAPPy.xcodeproj">
+            ReferencedContainer = "container:S.O.S..xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "C1B0F2D41C8634F80059C29B"
             BuildableName = "behAPPy.app"
             BlueprintName = "behAPPy"
-            ReferencedContainer = "container:behAPPy.xcodeproj">
+            ReferencedContainer = "container:S.O.S..xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

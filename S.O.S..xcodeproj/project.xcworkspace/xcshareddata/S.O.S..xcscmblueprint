@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F9E0B561493C968F604AAA0E814A0C3AA962472B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F9E0B561493C968F604AAA0E814A0C3AA962472B" : 0,
+    "A6225980B81C6CC85B84F81CFBF7FB60DB0BEA02" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2770380A-C683-4094-B76E-D2594884759D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F9E0B561493C968F604AAA0E814A0C3AA962472B" : "behAPPy\/",
+    "A6225980B81C6CC85B84F81CFBF7FB60DB0BEA02" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "S.O.S.",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "S.O.S..xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/behAPPytech\/test123456.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A6225980B81C6CC85B84F81CFBF7FB60DB0BEA02"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/behAPPytech\/behAPPy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F9E0B561493C968F604AAA0E814A0C3AA962472B"
+    }
+  ]
+}
