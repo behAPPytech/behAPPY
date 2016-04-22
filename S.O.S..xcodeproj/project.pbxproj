@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		359795C81CC9B2CD00D8CD24 /* activities.html in Resources */ = {isa = PBXBuildFile; fileRef = 359795C31CC9B2CD00D8CD24 /* activities.html */; };
+		359795C91CC9B2CD00D8CD24 /* advice.html in Resources */ = {isa = PBXBuildFile; fileRef = 359795C41CC9B2CD00D8CD24 /* advice.html */; };
+		359795CA1CC9B2CD00D8CD24 /* food.html in Resources */ = {isa = PBXBuildFile; fileRef = 359795C51CC9B2CD00D8CD24 /* food.html */; };
+		359795CB1CC9B2CD00D8CD24 /* resources.html in Resources */ = {isa = PBXBuildFile; fileRef = 359795C61CC9B2CD00D8CD24 /* resources.html */; };
+		359795CC1CC9B2CD00D8CD24 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 359795C71CC9B2CD00D8CD24 /* style.css */; };
 		35BF51061CC7075000DC8276 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF51051CC7075000DC8276 /* ActivitiesViewController.swift */; };
 		35C2998B1CC5A71B0062D715 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C2998A1CC5A71B0062D715 /* AdviceViewController.swift */; };
-		35C299921CC5B1FB0062D715 /* activities.html in Resources */ = {isa = PBXBuildFile; fileRef = 35C2998C1CC5B1FB0062D715 /* activities.html */; };
-		35C299931CC5B1FB0062D715 /* advice.html in Resources */ = {isa = PBXBuildFile; fileRef = 35C2998D1CC5B1FB0062D715 /* advice.html */; };
-		35C299941CC5B1FB0062D715 /* food.html in Resources */ = {isa = PBXBuildFile; fileRef = 35C2998E1CC5B1FB0062D715 /* food.html */; };
-		35C299951CC5B1FB0062D715 /* resources.html in Resources */ = {isa = PBXBuildFile; fileRef = 35C2998F1CC5B1FB0062D715 /* resources.html */; };
-		35C299971CC5B1FB0062D715 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 35C299911CC5B1FB0062D715 /* style.css */; };
 		35C299991CC5B4360062D715 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C299981CC5B4360062D715 /* ResourcesViewController.swift */; };
 		35C2999D1CC5B4600062D715 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C2999C1CC5B4600062D715 /* FoodViewController.swift */; };
 		C12CCF601C88BFA5003477E9 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */; };
@@ -52,13 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		359795C31CC9B2CD00D8CD24 /* activities.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = activities.html; sourceTree = "<group>"; };
+		359795C41CC9B2CD00D8CD24 /* advice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = advice.html; sourceTree = "<group>"; };
+		359795C51CC9B2CD00D8CD24 /* food.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = food.html; sourceTree = "<group>"; };
+		359795C61CC9B2CD00D8CD24 /* resources.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = resources.html; sourceTree = "<group>"; };
+		359795C71CC9B2CD00D8CD24 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		35BF51051CC7075000DC8276 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		35C2998A1CC5A71B0062D715 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
-		35C2998C1CC5B1FB0062D715 /* activities.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = activities.html; path = ../../../html/activities.html; sourceTree = "<group>"; };
-		35C2998D1CC5B1FB0062D715 /* advice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = advice.html; path = ../../../html/advice.html; sourceTree = "<group>"; };
-		35C2998E1CC5B1FB0062D715 /* food.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = food.html; path = ../../../html/food.html; sourceTree = "<group>"; };
-		35C2998F1CC5B1FB0062D715 /* resources.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = resources.html; path = ../../../html/resources.html; sourceTree = "<group>"; };
-		35C299911CC5B1FB0062D715 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style.css; path = ../../../html/style.css; sourceTree = "<group>"; };
 		35C299981CC5B4360062D715 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		35C2999C1CC5B4600062D715 /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
@@ -133,15 +133,15 @@
 		C1B0F2D71C8634F80059C29B /* behAPPy */ = {
 			isa = PBXGroup;
 			children = (
+				359795C31CC9B2CD00D8CD24 /* activities.html */,
+				359795C41CC9B2CD00D8CD24 /* advice.html */,
+				359795C51CC9B2CD00D8CD24 /* food.html */,
+				359795C61CC9B2CD00D8CD24 /* resources.html */,
+				359795C71CC9B2CD00D8CD24 /* style.css */,
 				35BF51051CC7075000DC8276 /* ActivitiesViewController.swift */,
 				35C2998A1CC5A71B0062D715 /* AdviceViewController.swift */,
 				35C299981CC5B4360062D715 /* ResourcesViewController.swift */,
 				35C2999C1CC5B4600062D715 /* FoodViewController.swift */,
-				35C2998C1CC5B1FB0062D715 /* activities.html */,
-				35C2998D1CC5B1FB0062D715 /* advice.html */,
-				35C2998E1CC5B1FB0062D715 /* food.html */,
-				35C2998F1CC5B1FB0062D715 /* resources.html */,
-				35C299911CC5B1FB0062D715 /* style.css */,
 				C1B0F2D81C8634F80059C29B /* AppDelegate.swift */,
 				C1B0F2DA1C8634F80059C29B /* ViewController.swift */,
 				C12CCF5F1C88BFA5003477E9 /* SleepViewController.swift */,
@@ -247,7 +247,7 @@
 				TargetAttributes = {
 					C1B0F2D41C8634F80059C29B = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = XDWQY2TAGS;
+						DevelopmentTeam = D8QVQM8CG8;
 					};
 					C1B0F2E81C8634F80059C29B = {
 						CreatedOnToolsVersion = 7.2;
@@ -286,14 +286,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C299941CC5B1FB0062D715 /* food.html in Resources */,
-				35C299971CC5B1FB0062D715 /* style.css in Resources */,
+				359795CB1CC9B2CD00D8CD24 /* resources.html in Resources */,
+				359795C91CC9B2CD00D8CD24 /* advice.html in Resources */,
 				C1B0F2E31C8634F80059C29B /* LaunchScreen.storyboard in Resources */,
+				359795CA1CC9B2CD00D8CD24 /* food.html in Resources */,
 				C1B0F2E01C8634F80059C29B /* Assets.xcassets in Resources */,
-				35C299931CC5B1FB0062D715 /* advice.html in Resources */,
 				C1B0F2DE1C8634F80059C29B /* Main.storyboard in Resources */,
-				35C299951CC5B1FB0062D715 /* resources.html in Resources */,
-				35C299921CC5B1FB0062D715 /* activities.html in Resources */,
+				359795CC1CC9B2CD00D8CD24 /* style.css in Resources */,
+				359795C81CC9B2CD00D8CD24 /* activities.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
